@@ -3,5 +3,5 @@
 
 Current status:
 - Can find (reliably):
--- Product Title
--- Product Description
+  - Product Title
+  - Product Description
