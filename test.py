@@ -20,20 +20,23 @@ soup = BeautifulSoup(data.text,'html.parser')
 #     if(':' in listitems.get_text()):
 #         specs.append(listitems.get_text())
 
-specs = ""
-if len(specs) == 0:
-    for listitems in soup.findAll('li'):
-        specs += listitems.get_text()
+# specs = ""
+# if len(specs) == 0:
+#     for listitems in soup.findAll('li'):
+#         specs += listitems.get_text()
 
-        # specs.append(listitems.get_text())
-specs = specs.replace('\n',' ')
+#         # specs.append(listitems.get_text())
+# specs = specs.replace('\n',' ')
 
-if(':' in specs):
-    for listitems in soup.findAll('li'):
-        if(':' in listitems.get_text()):
-            specs += listitems.get_text() + '\n'
+# if(':' in specs):
+#     for listitems in soup.findAll('li'):
+#         if(':' in listitems.get_text()):
+#             specs += listitems.get_text() + '\n'
 
-print(specs)
+# print(specs)
+
+if "reviewcount" in soup:
+    print("true")
 
 
 # print(len(listitems))

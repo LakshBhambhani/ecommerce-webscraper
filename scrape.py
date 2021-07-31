@@ -48,7 +48,7 @@ def find_matching_key(list_in, max_key_only = True):
     return keys    
 
 
-webpageurls = readFile("urls.txt")
+webpageurls = readFile("newurls.txt")
 
 # print(webpageurls)
 
@@ -166,15 +166,17 @@ for url in webpageurls:
     if(len(titles) > 0):
         print("Title: " + " ".join(str(titles[0]).split()))
         print("Specs: " + " ".join(specs))
-        # print("Price: " + " ".join(find_matching_key(prices, False)))
+        print("Price: " + " ".join(find_matching_key(prices, False)))
         # print("Price: " + " ".join(str(prices).split()))
-        # print("Num of Images: " + str(num_images))
+        if len(str(num_images)) > 30:
+            num_images = 0
+        print("Num of Images: " + str(num_images))
     else:
         print('n/a')
 
     
-    # if(len(details) > 0):
-    #     print("Details: " + " ".join(str(details).split()))
+    if(len(details) > 0):
+        print("Details: " + " ".join(str(details).split()))
 
     if(len(descriptions) == 0):
         for description in originalSoup.findAll("div", {"id": lambda y: y and y.find('description')}):
@@ -190,7 +192,7 @@ for url in webpageurls:
                 description = desc 
 
 
-    # if(len(description) > 0):  
-        # print("Description: " + " ".join(str(description).split()))
+    if(len(description) > 0):  
+        print("Description: " + " ".join(str(description).split()))
 
 
